@@ -3,19 +3,11 @@ import APIService from '../api/APIService';
 
 const DrinkList = () => {
     const [drinks, setDrinks] = useState([]);
-    // const [drinkId, setDrinkId] = useState(0);  // 문자열 초기화
-    // const [drinkName, setDrinkName] = useState('');  // 문자열 초기화
-    // const [drinkBrand, setDrinkBrand] = useState('');
-    // const [drinkPrice, setDrinkPrice] = useState(0);  // 가격은 숫자로 초기화
-    // const [drinkExpirationDate, setDrinkExpirationDate] = useState('');
-
 
     useEffect(() => {
-        APIService.fetchDrinks(
-            (response) => setDrinks(response.data),
-            (error) => console.error('음료 데이터를 불러오는 중 오류 발생:', error)
-        );
-    }, []);
+        APIService.fetchDrinks(setDrinks);
+    }, []); // 빈 배열을 전달하여 컴포넌트가 처음 렌더링될 때 한 번만 실행되도록 설정
+
     const drinkImages = {
         '코카콜라': 'https://www.ccbk.co.kr/m/static/images/brand/img_04.png',
         '펩시제로': 'https://img.danawa.com/prod_img/500000/143/536/img/13536143_1.jpg?shrink=360:360&_v=20230222093241',
