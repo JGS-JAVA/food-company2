@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import APIService from '../api/APIService';
 
 const DrinkList = () => {
-   // const [drinks, setDrinks] = useState([]);
+    const [drinks, setDrinks] = useState([]);
     const [drinkId, setDrinkId] = useState(0);  // 문자열 초기화
     const [drinkName, setDrinkName] = useState('');  // 문자열 초기화
     const [drinkBrand, setDrinkBrand] = useState('');
