@@ -3,11 +3,11 @@ import APIService from '../api/APIService';
 
 const DrinkList = () => {
     const [drinks, setDrinks] = useState([]);
-    const [drinkId, setDrinkId] = useState(0);  // 문자열 초기화
-    const [drinkName, setDrinkName] = useState('');  // 문자열 초기화
-    const [drinkBrand, setDrinkBrand] = useState('');
-    const [drinkPrice, setDrinkPrice] = useState(0);  // 가격은 숫자로 초기화
-    const [drinkExpirationDate, setDrinkExpirationDate] = useState('');
+    // const [drinkId, setDrinkId] = useState(0);  // 문자열 초기화
+    // const [drinkName, setDrinkName] = useState('');  // 문자열 초기화
+    // const [drinkBrand, setDrinkBrand] = useState('');
+    // const [drinkPrice, setDrinkPrice] = useState(0);  // 가격은 숫자로 초기화
+    // const [drinkExpirationDate, setDrinkExpirationDate] = useState('');
 
 
     useEffect(() => {
