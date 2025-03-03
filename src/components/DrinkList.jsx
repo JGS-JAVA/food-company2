@@ -5,8 +5,11 @@ const DrinkList = () => {
     const [drinks, setDrinks] = useState([]);
 
     useEffect(() => {
-        APIService.fetchDrinks(setDrinks);
-    }, []); // 빈 배열을 전달하여 컴포넌트가 처음 렌더링될 때 한 번만 실행되도록 설정
+        APIService.fetchDrinks(
+            (data) => setDrinks(data),
+            (error) => console.error('음료 데이터를 불러오는 중 오류 발생:', error)
+        );
+    }, []);
 
     const drinkImages = {
         '코카콜라': 'https://www.ccbk.co.kr/m/static/images/brand/img_04.png',

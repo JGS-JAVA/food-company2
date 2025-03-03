@@ -7,8 +7,14 @@ const SnackList = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        APIService.fetchSnacks(setSnacks());
+        APIService.fetchSnacks(
+            (data) => setSnacks(data),
+            (error) => console.error('스낵 데이터를 불러오는 중 오류 발생:', error)
+        );
     }, []);
+
+
+
 
     const snackImages = {
         '포카칩 오리지널': 'https://gdimg.gmarket.co.kr/4058982375/still/400?ver=1722695421',
@@ -31,18 +37,17 @@ const SnackList = () => {
                             <img
                                 src={snackImages[snack.snackName] || 'https://via.placeholder.com/300x200.png?text=No+Image'}
                                 className="card-img-top"
-                                alt={snack.snackName}
                                 style={{height: '200px', objectFit: 'cover'}}
                             />
-
                             <div className="card-body">
                                 <h5 className="card-title">{snack.snackName}</h5>
                                 <p className="card-text">브랜드: {snack.snackBrand}</p>
-                                <p className="card-text">무게:{snack.snackWeightG}</p>
-                                <p className="card-text">가격: {snack.snackPrice}원</p>
-                                <p className="card-text">재고:{snack.snackStock}개</p>
-                                <button className="btn btn-primary btn-sm"
-                                        onClick={() => navigate(`/snacks/${snack.snackId}`)}
+                                <p className="card-text">무게: {snack.snackWeightG}</p>
+                                <p className="card-text">가격: {snack.snackPrice} 원</p>
+                                <p className="card-text">재고: {snack.snackStock}개</p>
+                                <button
+                                    className="btn btn-primary btn-sm"
+                                    onClick={() => navigate(`/snacks/${snack.snackId}`)}
                                 >
                                     자세히 보기
                                 </button>
