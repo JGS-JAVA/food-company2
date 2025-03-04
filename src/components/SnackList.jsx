@@ -33,11 +33,10 @@ const SnackList = () => {
             <div className="row">
                 {snacks.map((snack) => (
                     <div className="col-md-4 mb-3">
-                        <div className="card shadow-sm">
-                            <img
-                                src={snackImages[snack.snackName] || 'https://via.placeholder.com/300x200.png?text=No+Image'}
+                        <div className="col-md-12">
+                            <img src={snackImages[snack.snackName] || 'https://via.placeholder.com/300x200.png?text=No+Image'}
                                 className="card-img-top"
-                                style={{height: '200px', objectFit: 'cover'}}
+                                 style={{height: '200px', objectFit: 'cover'}}
                             />
                             <div className="card-body">
                                 <h5 className="card-title">{snack.snackName}</h5>

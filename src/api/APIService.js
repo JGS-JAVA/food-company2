@@ -1,11 +1,9 @@
 import axios from "axios";
 
-const API_FOOD_URL = 'http://localhost:8000/api';
+const API_FOOD_URL = 'http://localhost:8080';
 
 const APIService = {
-    /**
-     * 음료 목록을 가져오는 함수
-     */
+
     fetchDrinks: function (onSuccess, onError) {
         axios.get(`${API_FOOD_URL}/api/drinks`)
             .then(
@@ -20,9 +18,6 @@ const APIService = {
                 });
     },
 
-    /**
-     * 스낵 목록을 가져오는 함수
-     */
     fetchSnacks: function (onSuccess, onError) {
         axios.get(`${API_FOOD_URL}/api/snacks`)
             .then(
@@ -37,9 +32,6 @@ const APIService = {
                 });
     },
 
-    /**
-     * 특정 ID의 스낵을 가져오는 함수
-     */
     fetchSnackById: function (id, onSuccess, onError) {
         axios.get(`${API_FOOD_URL}/api/snacks/${id}`)
             .then(
